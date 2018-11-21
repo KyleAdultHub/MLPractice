@@ -32,6 +32,7 @@ print("Testing matrix shape", X_test.shape)
 Y_train = np_utils.to_categorical(y_train, nb_classes)
 print(Y_train[0])
 Y_test = np_utils.to_categorical(y_test, nb_classes)
+print(Y_test[0])
 
 # builf neural network
 model = Sequential()
@@ -47,8 +48,7 @@ model.add(Activation('softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 model.fit(X_train, Y_train,
-          batch_size=128, epochs=4,
-          show_accuracy=True, verbose=1,
+          batch_size=128, epochs=4, verbose=1,
           validation_data=(X_test, Y_test))
 
 score = model.evaluate(X_test, Y_test, verbose=0)
