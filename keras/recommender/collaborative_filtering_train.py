@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 import pandas as pd
-from keras_recommender.library.cf import CollaborativeFilteringV1
+from .keras_recommender.library.cf import CollaborativeFilteringV1
 
 
 def main():
